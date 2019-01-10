@@ -10,7 +10,8 @@ def lockedout():
             {
                 "title": "Tutor",    
                 "text": "Tim",
-                "image_url": "https://hotspicyme.me/static/img/octotim.gif"
+                "image_url": "https://hotspicyme.me/static/img/octotim.gif",
+                "color": "danger"
             }
         ]
     }
