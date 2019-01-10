@@ -29,13 +29,11 @@ def slack_interaction():
     payload = json.loads(request.values['payload'])
     pprint.pprint(payload)
 
-    actions = {}
-    for action in payload.get('actions', []):
-        name = action['name']
-        value = action['value']
-        actions[name] = value
+    action = payload['actions'][0]
+    option = action['selected_options'][0]
+    value = option['value']
     
-    return f"Sending {actions['tutor']} to save you"
+    return f"Sending {value} to save you"
 
 if __name__ == '__main__':
     app.run(debug=True)
