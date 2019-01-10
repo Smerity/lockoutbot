@@ -29,7 +29,8 @@ def lockedout():
 def interactive_endpoint():
     payload = json.loads(request.values['payload'])
     pprint.pprint(payload)
-    return '???????'
+    tutor_id = payload['actions'][0]['selected_options'][0]['value']
+    return f'<@{tutor_id}>, Smerity locked himself out'
 
 if __name__ == '__main__':
     app.run(debug=True)
