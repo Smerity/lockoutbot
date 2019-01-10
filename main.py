@@ -25,5 +25,11 @@ def lockedout():
         ]
     })
 
+@app.route('/slack/interaction', methods=['GET', 'POST'])
+def interactive_endpoint():
+    payload = json.loads(request.values['payload'])
+    pprint.pprint(payload)
+    return '???????'
+
 if __name__ == '__main__':
     app.run(debug=True)
