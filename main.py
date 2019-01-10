@@ -33,7 +33,7 @@ def slack_interaction():
     option = action['selected_options'][0]
     value = option['value']
     
-    return f"Sending {value} to save you"
+    return f"Sending <@{value}> to save you"
 
 if __name__ == '__main__':
     app.run(debug=True)
