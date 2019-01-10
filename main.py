@@ -8,8 +8,9 @@ def lockedout():
         "text": "Sending a tutor to help you",
         "attachments": [
             {
-                "title": "Tutor",     
-                "text": "Tim"
+                "title": "Tutor",    
+                "text": "Tim",
+                "image_url": "https://hotspicyme.me/static/img/octotim.gif"
             }
         ]
     }
