@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import json
+import pprint
 
 app = Flask(__name__)
 
@@ -26,6 +27,7 @@ def lockedout():
 @app.route('/slack/interaction', methods=['GET', 'POST'])
 def slack_interaction():
     payload = json.loads(request.values['payload'])
+    pprint.pprint(payload)
 
     actions = {}
     for action in payload.get('actions', []):
