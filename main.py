@@ -28,7 +28,9 @@ def lockedout():
 @app.route('/slack/interaction', methods=['GET', 'POST'])
 def interactive_endpoint():
     payload = json.loads(request.values['payload'])
+    # We can "pretty print" (pprint) the payload to visually inspect it
     pprint.pprint(payload)
+    # You can find out which callback it is via payload['callback_id']
     tutor_id = payload['actions'][0]['selected_options'][0]['value']
     return f'<@{tutor_id}>, Smerity locked himself out'
 
