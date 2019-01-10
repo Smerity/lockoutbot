@@ -5,13 +5,37 @@ app = Flask(__name__)
 @app.route('/slack/lockedout', methods=['GET', 'POST'])
 def lockedout():
     response = {
-        "text": "Sending a tutor to help you",
+        "text": "Where are you locked out?",
         "attachments": [
             {
-                "title": "Tutor",    
-                "text": "Tim",
-                "image_url": "https://hotspicyme.me/static/img/octotim.gif",
-                "color": "danger"
+                "text": "Choose a location",
+                "callback_id": "lockout_location",
+                "actions": [
+                    {
+                        "name": "location",
+                        "text": "Main Building",
+                        "type": "button",
+                        "value": "Main Building"
+                    },
+                    {
+                        "name": "location",
+                        "text": "Langley",
+                        "type": "button",
+                        "value": "Langley"
+                    },
+                    {
+                        "name": "location",
+                        "text": "Reid",
+                        "type": "button",
+                        "value": "Reid"
+                    },
+                    {
+                        "name": "location",
+                        "text": "Williams",
+                        "type": "button",
+                        "value": "Williams"
+                    },
+                ]
             }
         ]
     }
